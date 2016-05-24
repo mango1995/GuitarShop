@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>吉他查询</title>
+<link href="bootstrap.css" rel='stylesheet' type='text/css' />
+<style>
+	html, body {
+		font-family: 'Lato', 微软雅黑;
+		font-size: 100%;
+		background: #fff;
+	}
+	.form-control{
+		margin-top:0px;
+	}
+	.glyphicon{
+		top:0;
+	}
+	#warning{
+		padding:5px 0;
+	}
+</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid">
+		<h2>吉他查找</h2>
+				<hr />
+		<div class="col-xs-12 col-md-3 col-lg-3" style="padding-left: 0;">	
+		<ul class="list-group">
+			<li class="list-group-item">列表</li>
+			<a href="Guitarsearch.html" class="list-group-item">吉他查找</a>
+		</ul>
+	</div>
+			
+			
+			<div class="col-xs-12 col-md-9 col-lg-9">
+			<div class="input-group">
+					<input type="text" name="search" id="search" placeholder="请输入查询词" class="form-control" />
+					<span class="input-group-addon glyphicon glyphicon-search" aria-hidden="true"></span>
+					<button class="btn btn-primary btn-block" onclick="search();" >查询</button>	
+				</div>
+				
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<tr>
+							<th>序列号</th>
+							<th>制造商</th>
+							<th>型号</th>
+							<th>类型</th>
+							<th>吉他弦数</th>
+							<th>上面木料</th>
+							<th>背面木料</th>
+							<th>价格</th>
+						</tr>						
+					</table>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="jquery-1.11.3.js"></script>
+<script type="text/javascript" src="bootstrap.min.js"></script>
+<script type="text/javascript" src="guitarsearch.js"></script>
+</html>
