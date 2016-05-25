@@ -61,7 +61,7 @@ public class search extends HttpServlet {
 				String model=rs.getString("model");
 				int numStrings=Integer.parseInt(rs.getString("numStrings"));			
 				GuitarSpec spec=new GuitarSpec(builder,model,type,numStrings,bWood,tWood);
-				if(matches(spec,search.toUpperCase())||search.toUpperCase().equals(rs.getString("model").toUpperCase())){
+				if(spec.matches(spec,search.toUpperCase())||search.toUpperCase().equals(rs.getString("model").toUpperCase())){
 					JSONObject jo = new JSONObject();
 					jo.put("serialNumber", rs.getString("serialNumber"));
 					jo.put("price",rs.getString("price"));
@@ -88,19 +88,6 @@ public class search extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-	}
-	public boolean matches(GuitarSpec otherSpec, String search) {
-		if(search.equals(otherSpec.builder.toString().toUpperCase())){
-			return true;
-		}else if(search.equals(otherSpec.backWood.toString().toUpperCase())){
-			return true;
-		}else if(search.equals(otherSpec.topWood.toString().toUpperCase())){
-			return true;
-		}else if(search.equals(otherSpec.type.toString().toUpperCase())){
-			return true;
-		}else{
-			return false;
-		}
 	}
 
 }
