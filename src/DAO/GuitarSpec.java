@@ -42,20 +42,17 @@ public class GuitarSpec {
     return topWood;
   }
 
-  public boolean matches(GuitarSpec otherSpec) {
-    if (builder != otherSpec.builder)
-      return false;
-    if ((model != null) && (!model.equals("")) &&
-        (!model.toLowerCase().equals(otherSpec.model.toLowerCase())))
-      return false;
-    if (type != otherSpec.type)
-      return false;
-    if (numStrings != otherSpec.numStrings)
-      return false;
-    if (backWood != otherSpec.backWood)
-      return false;
-    if (topWood != otherSpec.topWood)
-      return false;
-    return true;
-  }
+  public boolean matches(GuitarSpec otherSpec, String search) {
+		if(search.equals(otherSpec.builder.toString().toUpperCase())){
+			return true;
+		}else if(search.equals(otherSpec.backWood.toString().toUpperCase())){
+			return true;
+		}else if(search.equals(otherSpec.topWood.toString().toUpperCase())){
+			return true;
+		}else if(search.equals(otherSpec.type.toString().toUpperCase())){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
